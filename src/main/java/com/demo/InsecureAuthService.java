@@ -9,15 +9,14 @@ public class InsecureAuthService {
     private static final String DB_PASSWORD = "admin123"; // ❌ Hardcoded secret
 
     public boolean login(String username, String password) {
-
         boolean isAuthenticated = false;
-        String unusedVariable = "unused"; // ❌ Code smell
+        String unusedVariable = "this is unused"; // ❌ Code smell
 
         try {
             Connection connection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/test",
-                    "root",
-                    DB_PASSWORD
+                "jdbc:mysql://localhost:3306/test",
+                "root",
+                DB_PASSWORD
             );
 
             Statement statement = connection.createStatement();
